@@ -45,7 +45,7 @@ export default function Header() {
           <LinkTab key={1} label={"mobile"} href={"/mobile"} />
           <LinkTab key={2} label={"laptop"} href={"/laptop"} />
           <LinkTab key={3} label={"watch"} href={"/watch"} />;
-          <LinkTab key={3} label={"my page"} href={"/mypage"} />;
+          <LinkTab key={4} label={"my page"} href={"/mypage"} />;
         </Tabs>
       </Box>
     </div>
