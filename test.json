@@ -1,0 +1,26 @@
+[
+    {
+        "title": "iPhone 13 mini",
+        "price": 1100000,
+        "thumbnail": "iphone13mini.jpeg",
+        "category": "mobile"
+    },
+    {
+        "title": "iPhone 13 Pro Max",
+        "price": 1300000,
+        "thumbnail": "iphone13promax.jpeg",
+        "category": "mobile"
+    },
+    {
+        "title": "Macbook Pro",
+        "price": 2500000,
+        "thumbnail": "macbookpro.jpeg",
+        "category": "laptop"
+    },
+    {
+        "title": "Apple Watch 7",
+        "price": 50000,
+        "thumbnail": "applewatch7.jpeg",
+        "category": "watch"
+    }
+]

@@ -7,35 +7,33 @@ import { CardActionArea } from "@mui/material";
 import "./Item.css";
 import { Box } from "@mui/system";
 
-export default function ActionAreaCard() {
+export default function Item({ data }) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ width: 300 }}>
       <CardActionArea>
         <CardMedia
+          className="media"
           component="img"
           height="180"
-          image="/static/images/porsche.jpg"
-          alt="porsche taycan"
+          image={`static/images/${data.thumbnail}`}
+          alt="thumbnail"
         />
 
         <CardContent height="140">
           <Box sx={{ display: "flex", marginBottom: "1px" }}>
-            <Box sx={{ flexGrow: 1  }}>
-              <Typography
-                align="left"
-                gutterBottom
-                variant="h5"
-              >
-                Taycan 4S
+            <Box sx={{ flexGrow: 1 }}>
+              <Typography align="left" gutterBottom variant="h6">
+                {data.title}
               </Typography>
             </Box>
             <Box>
               <Typography
+                className="category"
                 display="inline"
                 gutterBottom
                 variant="h6"
               >
-                Porsche
+                {data.category}
               </Typography>
             </Box>
           </Box>
@@ -46,10 +44,7 @@ export default function ActionAreaCard() {
             variant="body2"
             color="text.secondary"
           >
-            The Taycan Cross Turismo embraces your lifestyle, with an enlarged
-            rear luggage compartment and an even more spacious interior. Its
-            bold capability is further highlighted by the characteristic accents
-            of the Off-road Design Package.
+            {data.price}
           </Typography>
         </CardContent>
       </CardActionArea>

@@ -1,5 +1,9 @@
-.MuiTypography-h6 {
-  background-color: #FE6B8B;
+.category {
+  background-color: #fe6b8b;
   padding: 0.3rem;
   border-radius: 0.5rem;
+}
+
+.media {
+  padding-top: "56.25%";
 }

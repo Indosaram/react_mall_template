@@ -1,9 +1,9 @@
-import * as React from "react";
+import React from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import { Link } from "react-router-dom";
-import "./Header.css"
+import "./Header.css";
 
 function LinkTab(props) {
   return (
@@ -14,22 +14,24 @@ function LinkTab(props) {
 }
 
 export default function Header() {
-  const categories = ["main", "mobile", "laptop", "watch"];
-  const path = window.location.pathname;
-  var index = categories.indexOf(path.substring(1));
-  if (index === -1) {
-    index = 0;
-  }
-
-  const [value, setValue] = React.useState(index);
+  const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
   return (
-    <>
-      <h2>Electronics</h2>
+    <div className="header">
+      <h2>
+        <Link
+          to="/"
+          onClick={(event) => {
+            handleChange(event, 0);
+          }}
+        >
+          Electronics
+        </Link>
+      </h2>
       <Box sx={{ width: "100%" }}>
         <Tabs
           value={value}
@@ -39,14 +41,13 @@ export default function Header() {
           aria-label="nav-tabs"
           centered
         >
-          {categories.map((category, index) => {
-            return (
-              <LinkTab key={index} label={category} href={`/${category}`} />
-            );
-          })}
-          ;
+          <LinkTab key={0} label={"main"} href={"/"} />
+          <LinkTab key={1} label={"mobile"} href={"/mobile"} />
+          <LinkTab key={2} label={"laptop"} href={"/laptop"} />
+          <LinkTab key={3} label={"watch"} href={"/watch"} />;
+          <LinkTab key={3} label={"my page"} href={"/mypage"} />;
         </Tabs>
       </Box>
-    </>
+    </div>
   );
 }

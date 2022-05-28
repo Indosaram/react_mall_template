@@ -1,27 +1,21 @@
 import "./App.css";
 import Header from "./components/Header";
 import Items from "./components/Items";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import MyPage from "./components/MyPage";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
         <Header />
-        <Switch>
-          <Route path="/">
-            <Items category="main" />
-          </Route>
-          <Route path="/mobile">
-            <Items category="mobile" />
-          </Route>
-          <Route path="/laptop">
-            <Items category="laptop" />
-          </Route>
-          <Route path="/watch">
-            <Items category="watch" />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route exact path="/" element={<Items />} />
+          <Route path="/mobile" element={<Items category="mobile" />} />
+          <Route path="/laptop" element={<Items category="laptop" />} />
+          <Route path="/watch" element={<Items category="watch" />} />
+          <Route path="/mypage" element={<MyPage/>}/>
+        </Routes>
       </div>
     </BrowserRouter>
   );
