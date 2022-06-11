@@ -7,7 +7,7 @@ export default function Items({ category }) {
   var path = category ? `?category=${category}` : "";
 
   useEffect(() => {
-    fetch(`http://localhost:5000/item` + path, {
+    fetch(`${process.env.REACT_APP_BACKEND_URI}/item` + path, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

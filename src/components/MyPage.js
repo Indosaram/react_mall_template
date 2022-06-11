@@ -34,7 +34,7 @@ export default function MyPage() {
   const history = useNavigate();
   const onClickLogin = (event) => {
     event.preventDefault();
-    fetch("http://localhost:5000/login", {
+    fetch(`${process.env.REACT_APP_BACKEND_URI}`, {
       method: "POST",
       body: new URLSearchParams({
         username: values.username,
